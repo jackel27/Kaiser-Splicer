@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-100 font-['Inter'];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-cyber-500 to-cyber-600 text-white font-semibold rounded-lg
+           hover:from-cyber-600 hover:to-cyber-700 transition-all duration-200 
+           shadow-lg hover:shadow-xl hover:shadow-cyber-500/25
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-800 text-gray-100 font-semibold rounded-lg
+           border border-gray-700 hover:bg-gray-700 transition-all duration-200
+           shadow-lg hover:shadow-xl active:scale-95;
+  }
+  
+  .glass-panel {
+    @apply bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-xl shadow-2xl;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-gray-900/50 border border-gray-700/50 rounded-lg
+           focus:border-cyber-500 focus:ring-2 focus:ring-cyber-500/25 focus:outline-none
+           transition-all duration-200 text-gray-100 placeholder-gray-500;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+/* Loading animation */
+.loading-spinner {
+  border: 3px solid rgba(0, 212, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: #00d4ff;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Waveform custom styles */
+.waveform-container {
+  @apply relative overflow-hidden rounded-lg bg-gray-900/50 border border-gray-800;
+}
+
+.region-handle {
+  @apply cursor-ew-resize;
+}
+
+/* Glow effects */
+.neon-glow {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+}
+
+.cyber-border {
+  position: relative;
+  background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+  padding: 1px;
+  border-radius: 0.5rem;
+}
+
+.cyber-border > * {
+  @apply bg-gray-950 rounded-lg;
+}
